@@ -115,12 +115,12 @@ int main(int argc, const char* argv[]) {
 		"A Star"
 	};
 
-	auto algo_select_menu = Container::Vertical({ Radiobox(&algorithms_name, &selected)});
+	auto algo_select_menu = Radiobox(&algorithms_name, &selected);
 
 	// Define checkbox for chosing diagonal finding
 	std::string diag_str = "Allow diagonal";
 
-	auto diagonal_check = Container::Vertical({ Checkbox(&diag_str, &diagonal_checked)});
+	auto diagonal_check = Checkbox(&diag_str, &diagonal_checked);
 
 	// Define the buttons and their functions
 	auto button_style = ButtonOption::Animated(Color::Default, Color::GrayDark,
@@ -165,7 +165,7 @@ int main(int argc, const char* argv[]) {
 			start_button,
 		   	reset_button,
 		   	clear_button,
-			map_button
+			map_button,
 			});
 
 	auto components = ftxui::Container::Horizontal({grid_with_mouse, buttons, algo_select_menu, diagonal_check});
